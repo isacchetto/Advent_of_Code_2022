@@ -14,16 +14,17 @@ int priority(char c) {
 int main() {
     ifstream cin("input.txt");
     string rucksack;
-    vector<int> first_compartment;
+    set<char> first_compartment;                             // set = no duplicates
     int sum=0;
 
     while(cin>>rucksack) {
         for(int i=0; i<rucksack.size()/2; i++) {
-            first_compartment.push_back(rucksack[i]);           // add elements at the end of vector
+            first_compartment.insert(rucksack[i]);          // add only new elements
         }
         for(int i=rucksack.size()/2; i<rucksack.size(); i++) {
-            if(count(first_compartment.begin(),first_compartment.end(),rucksack[i])) {          // 
+            if(first_compartment.count(rucksack[i])) {      // search if rucksack[i] is in first_compartment (return 1 or 0)
                 sum+=priority(rucksack[i]);
+                break; 
             }
         }
         first_compartment.clear();
