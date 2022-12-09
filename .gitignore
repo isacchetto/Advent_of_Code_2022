@@ -1,4 +1,4 @@
-.DS_Store
 .vscode/
 *.out
 *.txt
+.DS_Store
