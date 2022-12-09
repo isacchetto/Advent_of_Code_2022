@@ -2,13 +2,15 @@
 using namespace std;
 
 int puzzle1() {
+    ifstream cin("input.txt");
 
-    return ;
+    return 0;
 }
 
 int puzzle2() {
+    ifstream cin("input.txt");
 
-    return ;
+    return 0;
 }
 
 int main() {
